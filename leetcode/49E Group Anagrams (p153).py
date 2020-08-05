@@ -34,4 +34,3 @@ class Solution:
         # for word in strs:
         #     anagrams[''.join(sorted(word))].append(word)
         # return anagrams.values()
-        ## dd
