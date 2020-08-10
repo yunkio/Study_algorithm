@@ -40,6 +40,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -51,7 +52,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="49E Group Anagrams (p153)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ch06_p153_49E Group Anagrams" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -63,7 +64,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/leetcode/49E Group Anagrams (p153).py" />
+      <option name="SCRIPT_NAME" value="C:\Users\User\Desktop\jupyter\algorithm\leetcode\ch06_p153_49E Group Anagrams.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -74,7 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.49E Group Anagrams (p153)" />
+        <item itemvalue="Python.ch06_p153_49E Group Anagrams" />
       </list>
     </recent_temporary>
   </component>
@@ -92,6 +93,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="546" y="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1597023652415">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="546" y="283" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1597023652415" />
     <state x="579" y="184" key="FileChooserDialogImpl" timestamp="1596590060483">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -116,9 +121,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="61" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1596590506953" />
-    <state x="492" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1596673324587">
+    <state x="492" y="252" key="com.intellij.ide.util.TipDialog" timestamp="1597023613150">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="492" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1596673324587" />
+    <state x="492" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1597023613150" />
   </component>
 </project>
