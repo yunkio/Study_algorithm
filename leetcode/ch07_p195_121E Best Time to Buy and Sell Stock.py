@@ -25,3 +25,13 @@ class Solution:
         for buy in range(len(prices)):
             max_profit = max(max_profit, max(prices[buy:]) - prices[buy])
         return max_profit
+
+    #모범 답안 (카데인 알고리즘?) 56ms 91%
+    #이걸 왜 못했지 바보멍청이
+    def maxProfit(self, prices: List[int]) -> int:
+        profit = 0
+        min_price = sys.maxsize
+        for price in prices:
+            min_price = min(min_price, price)
+            profit = max(profit, price - min_price)
+        return profit
