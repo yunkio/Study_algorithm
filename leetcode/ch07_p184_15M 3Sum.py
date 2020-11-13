@@ -16,25 +16,40 @@ A solution set is:
 ]
 '''
 
-class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
-    # 내 풀이
-        nums.sort()
-        left, middle, right = 0, 1, len(nums) - 1
-        answer = []
+from typing import *
 
-        while right > left:
-            while right > middle:
-                result = nums[left] + nums[middle] + nums[right]
-                if result > 0:
-                    break
-                elif result == 0:
-                    answer.append([nums[left], nums[middle], nums[right]])
+
+class Solution:
+
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        # 내 풀이 - 944ms, 47.8%
+        result = []
+        nums.sort()
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            a = nums[i]
+            new_nums = nums[i + 1:]
+
+            j = 0
+            k = len(new_nums) - 1
+
+            while k > j:
+                b = new_nums[j]
+                c = new_nums[k]
+
+                if a + b + c < 0:
+                    j += 1
+                elif a + b + c > 0:
+                    k -= 1
                 else:
-                    middle += 1
-            if nums[left] + nums[right] > 0:
-                right -= 1
-            else:
-                left += 1
-                middle = left + 1
-        return answer
+                    answer = [a, b, c]
+                    result.append(answer)
+                    while k > j and new_nums[j] == new_nums[j + 1]:
+                        j += 1
+                    while k > j and new_nums[k] == new_nums[k - 1]:
+                        k -= 1
+                    k -= 1
+        return result
+
+

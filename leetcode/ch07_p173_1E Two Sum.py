@@ -15,7 +15,7 @@ return [0, 1].
 from typing import *
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        ## 내 답안
+        ## 내 답안 - 808ms, 29%.. 느려터짐
         nums = collections.deque(nums)
         i = 0
         while len(nums) > 0:
@@ -25,7 +25,7 @@ class Solution:
                 return [i,j]
             i += 1
 
-        ## 모범 답안
+        ## 모범 답안 - 52ms 훨씬 빠르다.
         # d = {}
         # for i, num in enumerate(nums):
         #     n = target - num

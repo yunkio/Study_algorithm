@@ -11,7 +11,7 @@ Output: 6
 '''
 class Solution:
     def trap(self, height: List[int]) -> int:
-    # 내 답안
+    # 내 답안 - 68ms, 17% 느리다..
         if len(height) <= 2:
             return 0
 
@@ -37,7 +37,7 @@ class Solution:
         right = height[max_index + 1:]
         return max_height, max_index, left, right
 
-    # 모범 답안 - 투포인터
+    # 모범 답안 - 투포인터 56ms, 45%
     #     if not height:
     #         return 0
     #
@@ -46,18 +46,18 @@ class Solution:
     #     left_max, right_max = height[left], height[right]
     #
     #     while left < right:
-    #         left_max, right_max = max(height[left], left_max), max(height(right), right_max)
+    #         left_max, right_max = max(height[left], left_max), max(height[right], right_max)
     #         # 더 높은 쪽을 향해 투 포인터 이동
     #         if left_max <= right_max:
     #             volume += left_max - height[left]
     #             left += 1
-    #         else
+    #         else:
     #             volume += right_max - height[right]
     #             right -= 1
     #
     #     return volume
     
-    # 모범 답안 - 스택 쌓기
+    # 모범 답안 - 스택 쌓기 52ms, 67%
     #     stack = []
     #     volume = 0
     #
