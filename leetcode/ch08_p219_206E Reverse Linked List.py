@@ -43,5 +43,13 @@ class Solution:
                 return result
             new, head.next = head.next, result
             return reverse(new, head)
-
         return reverse(head)
+
+    def reverseList3(self, head: ListNode) -> ListNode:
+    # 책 풀이 (2) 반복 - 32ms, 85.51%
+        node, prev = head, None
+        while node:
+            next, node.next = node.next, prev
+            prev, node = node, next
+        return prev
+
