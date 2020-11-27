@@ -7,4 +7,22 @@ Note: The length of temperatures will be in the range [1, 30000]. Each temperatu
 '''
 
 from typing import *
-
+class Solution:
+    def dailyTemperatures(self, T: List[int]) -> List[int]:
+        # 내 풀이 - 520ms, 35%
+        n = len(T)
+        wait = [0] * n
+        closest = [n-1]
+        for i in range(n-2, -1, -1):
+            if T[i+1] > T[i]:
+                wait[i] = 1
+            else:
+                while closest:
+                    j = closest[-1]
+                    if T[j] > T[i]:
+                        wait[i] = j - i
+                        break
+                    else:
+                        closest.pop()
+            closest.append(i)
+        return wait
