@@ -18,3 +18,16 @@ Constraints:
 s consists of lowercase English letters.
 '''
 from typing import *
+class Solution:
+    def removeDuplicateLetters(self, s: str) -> str:
+        last_idx = {c:i for i, c in enumerate(s)}
+        answer = []
+        seen = set()
+        for i, c in enumerate(s):
+            if c not in seen:
+                while answer and c < answer[-1] and i < last_idx[answer[-1]]:
+                    tail = answer.pop()
+                    seen.remove(tail)
+                answer.append(c)
+                seen.add(c)
+        return ''.join(answer)
