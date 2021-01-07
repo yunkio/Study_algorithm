@@ -28,6 +28,7 @@ The input prerequisites is a graph represented by a list of edges, not adjacency
 You may assume that there are no duplicate edges in the input prerequisites.
 1 <= numCourses <= 10^5
 '''
+from typing import *
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         # 내 풀이 - 1260ms (5%)
