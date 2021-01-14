@@ -32,3 +32,29 @@ N	road	K	result
 배달_3_njc7kq.png
 1번 마을에서 배달에 4시간 이하가 걸리는 마을은 [1, 2, 3, 5] 4개이므로 4를 return 합니다.
 '''
+# 내가 푼게 아니다.. 연구해보자..
+from math import inf
+from collections import deque
+
+def solution(N, road, K):
+    visited = [False] * (N + 1)
+    dists = [inf] * (N + 1)
+    dists[1] = 0
+    q = deque([1])
+
+    while q:
+        parent = q.popleft()
+        visited[parent] = True
+
+        for node1, node2, dist in road:
+            if node1 == parent or node2 == parent:
+                target = node1
+
+                if node1 == parent:
+                    target = node2
+
+                if dists[target] > dists[parent] + dist:
+                    dists[target] = dists[parent] + dist
+                    q.append(target)
+
+    return sum(1 for d in dists if d <= K)
