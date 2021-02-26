@@ -33,3 +33,11 @@ One possible solution is
 A -> B -> C -> A -> D -> E -> A -> F -> G -> A -> idle -> idle -> A -> idle -> idle -> A
 '''
 from typing import *
+from collections import Counter
+class Solution:
+    def leastInterval(self, tasks: List[str], n: int) -> int:
+        count_list = list(Counter(tasks).values())
+        max_count = max(count_list)
+        max_count_num = count_list.count(max_count)
+
+        return max((n+1) * (max_count-1) + max_count_num, len(tasks))
