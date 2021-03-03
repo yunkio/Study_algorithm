@@ -27,3 +27,10 @@ Constraints:
 1 <= n <= 45
 '''
 from typing import *
+class Solution:
+    # 내 풀이 - 28ms (83%)
+    def climbStairs(self, n: int) -> int:
+        x, y = 1, 1
+        for _ in range(n):
+            x, y = y, x + y
+        return x

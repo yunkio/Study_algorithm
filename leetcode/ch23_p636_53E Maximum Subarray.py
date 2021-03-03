@@ -35,3 +35,14 @@ Constraints:
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 '''
 from typing import *
+class Solution:
+    # 내 풀이 - 64ms (79%)
+    def maxSubArray(self, nums: List[int]) -> int:
+        n = len(nums)
+        res = [0] * n
+        res[0] = nums[0]
+
+        for i in range(1, n):
+            res[i] = max(res[i - 1] + nums[i], nums[i])
+
+        return max(res)

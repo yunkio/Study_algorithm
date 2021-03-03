@@ -24,8 +24,23 @@ Constraints:
 0 <= nums.length <= 100
 0 <= nums[i] <= 400
 '''
+from collections import defaultdict
 from typing import *
+
 class Solution:
-    # 내 풀이 - 160ms (88%)
-    def majorityElement(self, nums: List[int]) -> int:
-        return max(set(nums), key=nums.count)
+    # 내 풀이 - 24ms (96%)
+    dp = defaultdict(int)
+    def rob(self, nums: List[int]) -> int:
+        n = len(nums)
+        if not nums:
+            return 0
+        if len(nums) <= 2:
+            return max(nums)
+
+        self.dp[0] = nums[0]
+        self.dp[1] = max(nums[0], nums[1])
+
+        for i in range(2, n):
+            self.dp[i] = max(self.dp[i - 2] + nums[i], self.dp[i - 1])
+
+        return self.dp[n - 1]
