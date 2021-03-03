@@ -24,22 +24,18 @@ Note:
 0 ≤ N ≤ 30.
 '''
 from typing import *
-import collections
+from collections import defaultdict
 class Solution:
+    # 내 답안 - 32ms (66%)
+    fib_dic = defaultdict(int)
+    fib_dic[0] = 0
+    fib_dic[1] = 1
+
     def fib(self, N: int) -> int:
-        ## 내 답안 (메모이제이션)
-        fib_dic = collections.defaultdict(int)
-        fib_dic[0] = 0
-        fib_dic[1] = 1
-
-        def fib(self, N: int) -> int:
-
-            if N in self.fib_dic.keys():
-                return self.fib_dic[N]
-
-            else:
-                self.fib_dic[N] = self.fib(N - 1) + self.fib(N - 2)
-
+        if N in self.fib_dic.keys():
             return self.fib_dic[N]
 
-        ## 모범 답안 (메모이제이션)
+        else:
+            self.fib_dic[N] = self.fib(N - 1) + self.fib(N - 2)
+
+        return self.fib_dic[N]
